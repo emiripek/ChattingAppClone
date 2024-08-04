@@ -1,24 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+        <array key="Poppins-Thin.ttf">
+            <string>Poppins-Thin</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--SplashVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SplashVC" customModule="ChattingAppClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_background" translatesAutoresizingMaskIntoConstraints="NO" id="ua2-9h-edJ">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect friends easily &amp; quickly" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt6-kL-lnM">
+                                <rect key="frame" x="26" y="80" width="356" height="381"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="68"/>
+                                <color key="textColor" name="clr_white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our chat app is the perfect way to stay connected with friends and family." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6m-kq-vgb">
+                                <rect key="frame" x="26" y="500" width="356" height="45"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                <color key="textColor" name="clr_white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kwa-BH-Ens">
+                                <rect key="frame" x="97" y="583" width="202" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqN-1O-UOc">
+                                        <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="48"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="img_fbButton"/>
+                                        <connections>
+                                            <action selector="fbButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y7E-UZ-dJq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVv-uj-6qt">
+                                        <rect key="frame" x="67.333333333333343" y="0.0" width="67.333333333333343" height="48"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="img_googleButton"/>
+                                        <connections>
+                                            <action selector="googleButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XWp-ia-ZEG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5A-qY-PPT">
+                                        <rect key="frame" x="134.66666666666666" y="0.0" width="67.333333333333343" height="48"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="img_appleButton"/>
+                                        <connections>
+                                            <action selector="appleButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AH7-bj-NlG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="8RP-ux-9Yo"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_separator" translatesAutoresizingMaskIntoConstraints="NO" id="XgO-sd-GNY">
+                                <rect key="frame" x="32" y="661" width="333" height="14"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLR-mU-W1u">
+                                <rect key="frame" x="26" y="705" width="345" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="1LJ-Fd-taJ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Sign up with mail" cornerStyle="capsule" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" red="1" green="1" blue="1" alpha="0.37282698675496689" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="signUpButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="boz-Jq-uIE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Existing account? Log in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2t-q9-EWr">
+                                <rect key="frame" x="111" y="799" width="187" height="19.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Poppins-Thin" family="Poppins" pointSize="14"/>
+                                <color key="textColor" name="clr_white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yLR-mU-W1u" secondAttribute="trailing" constant="22" id="1PV-FN-5FZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wt6-kL-lnM" secondAttribute="trailing" constant="11" id="4tU-w9-pUe"/>
+                            <constraint firstItem="yLR-mU-W1u" firstAttribute="top" secondItem="XgO-sd-GNY" secondAttribute="bottom" constant="30" id="74n-Ty-yeQ"/>
+                            <constraint firstItem="Kwa-BH-Ens" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="8aI-K6-q1R"/>
+                            <constraint firstItem="Wt6-kL-lnM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="8hH-QN-uGW"/>
+                            <constraint firstItem="XgO-sd-GNY" firstAttribute="top" secondItem="Kwa-BH-Ens" secondAttribute="bottom" constant="30" id="CqW-h1-fzI"/>
+                            <constraint firstItem="ua2-9h-edJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EE7-yh-CgC"/>
+                            <constraint firstItem="Wt6-kL-lnM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="Eof-aC-Ogz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ua2-9h-edJ" secondAttribute="trailing" id="GQD-dN-ymm"/>
+                            <constraint firstItem="XgO-sd-GNY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="HEZ-st-mcW"/>
+                            <constraint firstItem="yLR-mU-W1u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="K0L-pI-gMn"/>
+                            <constraint firstItem="w2t-q9-EWr" firstAttribute="top" secondItem="yLR-mU-W1u" secondAttribute="bottom" constant="46" id="LOU-dS-5qN"/>
+                            <constraint firstItem="i6m-kq-vgb" firstAttribute="top" secondItem="Wt6-kL-lnM" secondAttribute="bottom" constant="39" id="RT9-0T-ZL8"/>
+                            <constraint firstItem="w2t-q9-EWr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="111" id="Tq3-dT-wdL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ua2-9h-edJ" secondAttribute="bottom" constant="-34" id="VG7-u4-k5C"/>
+                            <constraint firstItem="i6m-kq-vgb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="Wer-pp-m91"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w2t-q9-EWr" secondAttribute="trailing" constant="95" id="Zw7-cs-6vX"/>
+                            <constraint firstItem="Kwa-BH-Ens" firstAttribute="top" secondItem="i6m-kq-vgb" secondAttribute="bottom" constant="38" id="f60-OO-X3Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XgO-sd-GNY" secondAttribute="trailing" constant="28" id="lfy-7x-Fvb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kwa-BH-Ens" secondAttribute="trailing" constant="94" id="q8U-4S-w6s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i6m-kq-vgb" secondAttribute="trailing" constant="11" id="st6-sd-9PS"/>
+                            <constraint firstItem="ua2-9h-edJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-59" id="xhJ-uY-rMs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="appleButton" destination="D5A-qY-PPT" id="dDt-yJ-u4e"/>
+                        <outlet property="existingAccountLabel" destination="w2t-q9-EWr" id="kpP-gp-fRo"/>
+                        <outlet property="fbButton" destination="EqN-1O-UOc" id="5Eo-1r-eBV"/>
+                        <outlet property="googleButton" destination="lVv-uj-6qt" id="G1e-cd-WAR"/>
+                        <outlet property="signUpButton" destination="yLR-mU-W1u" id="gEO-2N-u4S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="img_appleButton" width="48" height="48"/>
+        <image name="img_background" width="4096" height="4096"/>
+        <image name="img_fbButton" width="48" height="48"/>
+        <image name="img_googleButton" width="48" height="48"/>
+        <image name="img_separator" width="315" height="14"/>
+        <namedColor name="clr_white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
