@@ -19,10 +19,10 @@ final class SplashVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupLabel()
+        configureExistingAccountLabel()
     }
     
-    private func setupLabel() {
+    private func configureExistingAccountLabel() {
         let fullText = "Existing account? Log in"
         let clickablePart = "Log in"
         
@@ -54,9 +54,15 @@ final class SplashVC: UIViewController {
         
         if label.didTapAttributedTextInRange(range, gesture: gesture) {
             // Handle the tap on "Log in"
-            print("Log in tapped")
+            navigateToSignInVC()
             // You can perform a segue or any other action here
         }
+    }
+    
+    private func navigateToSignInVC() {
+        if let nextViewController = storyboard?.instantiateViewController(withIdentifier: "ToSignInVC") {
+                    navigationController?.pushViewController(nextViewController, animated: true)
+                }
     }
 }
 

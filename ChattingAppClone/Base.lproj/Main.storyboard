@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BC7-Qi-mpc">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -9,6 +9,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-Light.ttf">
+            <string>Poppins-Light</string>
+        </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
@@ -20,7 +29,7 @@
         <!--SplashVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SplashVC" customModule="ChattingAppClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="SplashVC" customModule="ChattingAppClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,6 +133,7 @@
                             <constraint firstItem="ua2-9h-edJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-59" id="xhJ-uY-rMs"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="X9U-8T-ju9"/>
                     <connections>
                         <outlet property="appleButton" destination="D5A-qY-PPT" id="dDt-yJ-u4e"/>
                         <outlet property="existingAccountLabel" destination="w2t-q9-EWr" id="kpP-gp-fRo"/>
@@ -134,15 +144,203 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1057.2519083969464" y="-34.507042253521128"/>
+        </scene>
+        <!--Sign InVC-->
+        <scene sceneID="aae-fg-cng">
+            <objects>
+                <viewController storyboardIdentifier="ToSignInVC" id="ZnH-HD-gd8" customClass="SignInVC" customModule="ChattingAppClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oGI-zU-qCb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="853-qK-7vb">
+                                <rect key="frame" x="24" y="61" width="48" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="btn_back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="ZnH-HD-gd8" eventType="touchUpInside" id="o7z-gx-bsw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to Chatbox" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckv-w2-rVh">
+                                <rect key="frame" x="108" y="164" width="178" height="25.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="18"/>
+                                <color key="textColor" name="clr_blue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back! Sign in using your social account or email to continue us" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJz-wI-dok">
+                                <rect key="frame" x="41" y="208.33333333333334" width="311" height="39.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="14"/>
+                                <color key="textColor" name="clr_gray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ieQ-jG-PnQ">
+                                <rect key="frame" x="95" y="277.66666666666669" width="202" height="62"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdS-Jd-P6Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="62"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="img_plainFbButton"/>
+                                        <connections>
+                                            <action selector="fbButtonTapped:" destination="ZnH-HD-gd8" eventType="touchUpInside" id="F5p-r6-8mV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFW-TZ-ouW">
+                                        <rect key="frame" x="67.333333333333343" y="0.0" width="67.333333333333343" height="62"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="img_plainGoogleButton"/>
+                                        <connections>
+                                            <action selector="googleButtonTapped:" destination="ZnH-HD-gd8" eventType="touchUpInside" id="80e-yQ-vg2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKV-GQ-yUS">
+                                        <rect key="frame" x="134.66666666666666" y="0.0" width="67.333333333333343" height="62"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="img_plainAppleButton"/>
+                                        <connections>
+                                            <action selector="appleButtonTapped:" destination="ZnH-HD-gd8" eventType="touchUpInside" id="r2p-fy-DZh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_graySeparator" translatesAutoresizingMaskIntoConstraints="NO" id="jnO-j0-Uxh">
+                                <rect key="frame" x="30" y="369.66666666666669" width="333" height="14"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jn4-Jy-JDs">
+                                <rect key="frame" x="20" y="413.66666666666669" width="349" height="146.00000000000006"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9V-XQ-8dm">
+                                        <rect key="frame" x="0.0" y="0.0" width="349" height="25.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                        <color key="textColor" name="clr_blue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JyU-Tx-NM1">
+                                        <rect key="frame" x="0.0" y="40.333333333333314" width="349" height="25.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29z-Gm-geH">
+                                        <rect key="frame" x="0.0" y="80.666666666666629" width="349" height="25"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                        <color key="textColor" name="clr_blue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iOc-mx-GiC">
+                                        <rect key="frame" x="0.0" y="120.66666666666667" width="349" height="25.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="146" id="DzA-nG-L07"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjm-kY-UIn" customClass="CustomGradientButton" customModule="ChattingAppClone" customModuleProvider="target">
+                                <rect key="frame" x="24" y="706.66666666666663" width="345" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="OmE-Xc-e5y"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log in">
+                                    <fontDescription key="titleFontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
+                                    <color key="baseForegroundColor" name="clr_white"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" name="clr_blue"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logInButtonTapped:" destination="ZnH-HD-gd8" eventType="touchUpInside" id="09H-Rr-ixV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0h-aw-hhq">
+                                <rect key="frame" x="129" y="770.66666666666663" width="146" height="19.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                <color key="textColor" name="clr_blue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lcS-eC-pQf"/>
+                        <color key="backgroundColor" name="clr_white"/>
+                        <constraints>
+                            <constraint firstItem="lcS-eC-pQf" firstAttribute="trailing" secondItem="853-qK-7vb" secondAttribute="trailing" constant="321" id="0DK-9G-haH"/>
+                            <constraint firstItem="ckv-w2-rVh" firstAttribute="top" secondItem="lcS-eC-pQf" secondAttribute="top" constant="105" id="0J7-oZ-G0P"/>
+                            <constraint firstItem="jn4-Jy-JDs" firstAttribute="top" secondItem="jnO-j0-Uxh" secondAttribute="bottom" constant="30" id="32j-79-dN1"/>
+                            <constraint firstItem="DJz-wI-dok" firstAttribute="top" secondItem="ckv-w2-rVh" secondAttribute="bottom" constant="19" id="7UJ-4H-aTy"/>
+                            <constraint firstItem="n0h-aw-hhq" firstAttribute="top" secondItem="xjm-kY-UIn" secondAttribute="bottom" constant="16" id="7dj-Ld-Y2o"/>
+                            <constraint firstItem="853-qK-7vb" firstAttribute="top" secondItem="oGI-zU-qCb" secondAttribute="top" constant="61" id="Gqu-CW-WsK"/>
+                            <constraint firstItem="ieQ-jG-PnQ" firstAttribute="leading" secondItem="lcS-eC-pQf" secondAttribute="leading" constant="95" id="ISX-er-kvp"/>
+                            <constraint firstItem="lcS-eC-pQf" firstAttribute="trailing" secondItem="ieQ-jG-PnQ" secondAttribute="trailing" constant="96" id="JaD-lf-Hr3"/>
+                            <constraint firstItem="ckv-w2-rVh" firstAttribute="leading" secondItem="lcS-eC-pQf" secondAttribute="leading" constant="108" id="Pfx-j1-gsl"/>
+                            <constraint firstItem="n0h-aw-hhq" firstAttribute="leading" secondItem="lcS-eC-pQf" secondAttribute="leading" constant="129" id="QBG-xh-4dN"/>
+                            <constraint firstItem="lcS-eC-pQf" firstAttribute="trailing" secondItem="jnO-j0-Uxh" secondAttribute="trailing" constant="30" id="TfW-OD-zcw"/>
+                            <constraint firstItem="DJz-wI-dok" firstAttribute="leading" secondItem="lcS-eC-pQf" secondAttribute="leading" constant="41" id="ULi-0L-QGJ"/>
+                            <constraint firstItem="jnO-j0-Uxh" firstAttribute="leading" secondItem="lcS-eC-pQf" secondAttribute="leading" constant="30" id="WUh-f3-FUq"/>
+                            <constraint firstItem="xjm-kY-UIn" firstAttribute="top" secondItem="jn4-Jy-JDs" secondAttribute="bottom" constant="147" id="YEU-RH-IJp"/>
+                            <constraint firstItem="853-qK-7vb" firstAttribute="leading" secondItem="lcS-eC-pQf" secondAttribute="leading" constant="24" id="eIY-ag-F2J"/>
+                            <constraint firstItem="jn4-Jy-JDs" firstAttribute="leading" secondItem="lcS-eC-pQf" secondAttribute="leading" constant="20" id="fTl-cj-aGa"/>
+                            <constraint firstItem="lcS-eC-pQf" firstAttribute="trailing" secondItem="ckv-w2-rVh" secondAttribute="trailing" constant="107" id="fYC-wE-hRD"/>
+                            <constraint firstItem="lcS-eC-pQf" firstAttribute="trailing" secondItem="jn4-Jy-JDs" secondAttribute="trailing" constant="24" id="hIJ-lI-TZh"/>
+                            <constraint firstItem="xjm-kY-UIn" firstAttribute="leading" secondItem="lcS-eC-pQf" secondAttribute="leading" constant="24" id="jrp-ce-dtF"/>
+                            <constraint firstItem="ieQ-jG-PnQ" firstAttribute="top" secondItem="DJz-wI-dok" secondAttribute="bottom" constant="30" id="lP6-Ll-v88"/>
+                            <constraint firstItem="lcS-eC-pQf" firstAttribute="trailing" secondItem="n0h-aw-hhq" secondAttribute="trailing" constant="118" id="prC-kf-3DK"/>
+                            <constraint firstAttribute="trailing" secondItem="DJz-wI-dok" secondAttribute="trailing" constant="41" id="pyD-TH-oNa"/>
+                            <constraint firstItem="jnO-j0-Uxh" firstAttribute="top" secondItem="ieQ-jG-PnQ" secondAttribute="bottom" constant="30" id="r4E-bn-wxV"/>
+                            <constraint firstItem="lcS-eC-pQf" firstAttribute="trailing" secondItem="xjm-kY-UIn" secondAttribute="trailing" constant="24" id="t5b-MK-34a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="JyU-Tx-NM1" id="oBx-bv-0h0"/>
+                        <outlet property="passwordTextField" destination="iOc-mx-GiC" id="kzH-An-W55"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KP0-ny-Kaw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1947" y="-35"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kkU-Jm-kLn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="BC7-Qi-mpc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F9H-Lx-9kJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ROC-jf-JLn">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Koe-o5-Yxt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1gy-dn-CnH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>
+        <image name="btn_back" width="24" height="24"/>
         <image name="img_appleButton" width="48" height="48"/>
         <image name="img_background" width="4096" height="4096"/>
         <image name="img_fbButton" width="48" height="48"/>
         <image name="img_googleButton" width="48" height="48"/>
+        <image name="img_graySeparator" width="315" height="14"/>
+        <image name="img_plainAppleButton" width="48" height="48"/>
+        <image name="img_plainFbButton" width="48" height="48"/>
+        <image name="img_plainGoogleButton" width="48" height="48"/>
         <image name="img_separator" width="315" height="14"/>
+        <namedColor name="clr_blue">
+            <color red="0.23921568627450981" green="0.29019607843137257" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="clr_gray">
+            <color red="0.47450980392156861" green="0.48627450980392156" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="clr_white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

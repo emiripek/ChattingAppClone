@@ -33,6 +33,7 @@
 		F9DE778A2C5FAA44006BA365 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9DE77782C5FAA43006BA365 /* Poppins-Light.ttf */; };
 		F9DE778E2C5FC102006BA365 /* UILabel+Ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DE778D2C5FC102006BA365 /* UILabel+Ext..swift */; };
 		F9DE77902C6006A7006BA365 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DE778F2C6006A7006BA365 /* SignInVC.swift */; };
+		F9DE77922C601CB8006BA365 /* CustomGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DE77912C601CB8006BA365 /* CustomGradientButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		F9DE77782C5FAA43006BA365 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		F9DE778D2C5FC102006BA365 /* UILabel+Ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext..swift"; sourceTree = "<group>"; };
 		F9DE778F2C6006A7006BA365 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		F9DE77912C601CB8006BA365 /* CustomGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGradientButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		F91F57182C5E81BE00C41AE6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F9DE77912C601CB8006BA365 /* CustomGradientButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				F9DE778E2C5FC102006BA365 /* UILabel+Ext..swift in Sources */,
 				F92511082C5B7A98002DE856 /* AppDelegate.swift in Sources */,
 				F925110A2C5B7A98002DE856 /* SceneDelegate.swift in Sources */,
+				F9DE77922C601CB8006BA365 /* CustomGradientButton.swift in Sources */,
 				F9DE77902C6006A7006BA365 /* SignInVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
