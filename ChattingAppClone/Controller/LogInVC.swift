@@ -1,5 +1,5 @@
 //
-//  SignInVC.swift
+//  LogInVC.swift
 //  ChattingAppClone
 //
 //  Created by Emirhan İpek on 4.08.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SignInVC: UIViewController {
+final class LogInVC: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -42,7 +42,6 @@ final class SignInVC: UIViewController {
     }
     
     // MARK: - Action
-    
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }

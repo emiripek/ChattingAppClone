@@ -9,16 +9,10 @@ import UIKit
 
 final class SplashVC: UIViewController {
     
-    @IBOutlet weak var fbButton: UIButton!
-    @IBOutlet weak var googleButton: UIButton!
-    @IBOutlet weak var appleButton: UIButton!
-    @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var existingAccountLabel: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureExistingAccountLabel()
     }
     
@@ -26,7 +20,6 @@ final class SplashVC: UIViewController {
         let fullText = "Existing account? Log in"
         let clickablePart = "Log in"
         
-        // Use the UILabel extension method to set attributed text
         existingAccountLabel.setAttributedTextWithClickablePart(
             fullText: fullText,
             clickablePart: clickablePart,
@@ -37,14 +30,21 @@ final class SplashVC: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func fbButtonTapped(_ sender: Any) {
+    @IBAction func facebookButtonTapped(_ sender: Any) {
     }
-    @IBAction func googleButtonTapped(_ sender: Any) {
+    
+    @IBAction func gmailButtonTapped(_ sender: Any) {
     }
+    
     @IBAction func appleButtonTapped(_ sender: Any) {
     }
+    
     @IBAction func signUpButtonTapped(_ sender: Any) {
+        if let signUpVC = storyboard?.instantiateViewController(identifier: "ToSignUpVC") {
+            navigationController?.pushViewController(signUpVC, animated: true)
+        }
     }
+    
     
     @objc private func existingAccountLabelTapped(_ gesture: UITapGestureRecognizer) {
         guard let label = gesture.view as? UILabel, let text = label.text else { return }
@@ -60,9 +60,9 @@ final class SplashVC: UIViewController {
     }
     
     private func navigateToSignInVC() {
-        if let nextViewController = storyboard?.instantiateViewController(withIdentifier: "ToSignInVC") {
-                    navigationController?.pushViewController(nextViewController, animated: true)
-                }
+        if let logInVC = storyboard?.instantiateViewController(identifier: "ToLogInVC") {
+            navigationController?.pushViewController(logInVC, animated: true)
+        }
     }
 }
 
